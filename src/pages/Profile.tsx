@@ -2,7 +2,8 @@
 // Kini mengambil data nyata dari session (localStorage fallback) atau Firestore via helper.
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { getCurrentUser, fetchUserById, updateUserProfile } from '../lib/firebase';
+import { getCurrentUser, fetchUserById, updateUserProfile, fetchPostsByAuthor } from '../lib/firebase';
+import PostList from '../components/PostList';
 
 export default function Profile() {
   const { userId } = useParams();
@@ -13,6 +14,8 @@ export default function Profile() {
   const [editData, setEditData] = useState<any | null>(null);
   const [isEditing, setIsEditing] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [userPosts, setUserPosts] = useState<any[]>([]);
+  const [loadingPosts, setLoadingPosts] = useState(false);
 
   useEffect(() => {
     let mounted = true;
@@ -35,6 +38,18 @@ export default function Profile() {
         setUser(result);
         setEditData(result);
         setLoading(false);
+        
+        // Fetch user posts
+        setLoadingPosts(true);
+        if (result?.uid) {
+          const posts = await fetchPostsByAuthor(result.uid);
+          if (mounted) {
+            setUserPosts(posts);
+            setLoadingPosts(false);
+          }
+        } else {
+          if (mounted) setLoadingPosts(false);
+        }
       }
     }
     load();
@@ -161,7 +176,10 @@ export default function Profile() {
                       ✓ Simpan
                     </button>
                     <button
-                      onClick={() => setIsEditing(false)}
+                      onClick={() => {
+                        setEditData(user);
+                        setIsEditing(false);
+                      }}
                       className="px-4 py-2 bg-slate-700 hover:bg-slate-600 text-white text-sm font-medium rounded transition-colors"
                     >
                       × Batal
@@ -169,7 +187,10 @@ export default function Profile() {
                   </>
                 ) : (
                   <button
-                    onClick={() => setIsEditing(true)}
+                    onClick={() => {
+                      setEditData({ ...user });
+                      setIsEditing(true);
+                    }}
                     className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded transition-colors"
                   >
                     Edit Profile
@@ -297,10 +318,18 @@ export default function Profile() {
 
       {/* Recent Posts */}
       <div className="bg-slate-900 border border-slate-800 rounded-lg p-6">
-        <h2 className="text-xl font-bold text-white mb-4">Posting Terbaru</h2>
-        <div className="text-center py-8 text-gray-500 text-sm">
-          Fitur untuk melihat posts dari user segera hadir!
-        </div>
+        <h2 className="text-xl font-bold text-white mb-4">Posting Terbaru ({userPosts.length})</h2>
+        {loadingPosts ? (
+          <div className="text-center py-8 text-gray-400 text-sm">Memuat posts...</div>
+        ) : userPosts.length > 0 ? (
+          <PostList posts={userPosts} onPostDeleted={(postId) => {
+            setUserPosts(prev => prev.filter(p => p.id !== postId));
+          }} />
+        ) : (
+          <div className="text-center py-8 text-gray-500 text-sm">
+            {isOwnProfile ? 'Kamu belum membuat post apapun.' : 'User ini belum membuat post apapun.'}
+          </div>
+        )}
       </div>
     </div>
   );

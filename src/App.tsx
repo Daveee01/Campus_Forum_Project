@@ -1,4 +1,4 @@
-﻿import { Routes, Route, Navigate } from 'react-router-dom';
+﻿import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -8,9 +8,13 @@ import Profile from './pages/Profile';
 import Seed from './pages/Seed';
 
 export default function App() {
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
+
   return (
     <div className="min-h-screen flex flex-col bg-slate-950">
-      <Header />
+      {/* Header ditampilkan di semua halaman kecuali Home (Home punya Header sendiri dengan search) */}
+      {!isHomePage && <Header />}
       <main className="flex-1 px-4">
         <div className="max-w-6xl mx-auto py-6">
           <Routes>

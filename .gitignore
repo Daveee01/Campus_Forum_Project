@@ -64,6 +64,47 @@ node_modules/
 
 # dotenv environment variables file
 .env
+.env.local
+.env.*.local
+
+# Vite build output
+dist/
+
+# Vite / React cache
+.vite/
+*.tsbuildinfo
+
+# Editor folders
+.vscode/
+.idea/
+
+# OS artifacts
+Thumbs.db
+.DS_Store
+
+# Firebase emulator data
+firebase-export-*/
+firestore-debug.log
+
+# Functions build (backend)
+backend/functions/lib/
+backend/functions/node_modules/
+
+# Log rotation archives
+*.log.*
+
+# Local test data
+tmp/
+temp/
+*.local.json
+
+# Coverage variants
+coverage/**
+coverage-final.json
+
+# Ignore generated rules duplicates at root (moved to backend)
+firestore.rules
+storage.rules
 
 # dataconnect generated files
 .dataconnect

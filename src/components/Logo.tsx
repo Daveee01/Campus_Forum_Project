@@ -41,8 +41,8 @@ export default function Logo({ compact = false }: LogoProps) {
 				</g>
 			</svg>
 			<div className="leading-none">
-				<div className="text-white font-bold">KampusConnect</div>
-				<div className="text-slate-400 text-xs -mt-0.5">Forum Mahasiswa</div>
+				<div className="text-white font-bold">UVerse</div>
+				<div className="text-slate-400 text-xs -mt-0.5">Campus Forum</div>
 			</div>
 		</div>
 	);

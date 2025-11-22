@@ -2,7 +2,7 @@
 // Fields: type, title, topic, content. On submit it calls `addPost` and redirects home.
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { addPost, getCurrentUser, PostType } from '../lib/firebase';
+import { addPost, getCurrentUser, fetchUserById, PostType } from '../lib/firebase';
 
 const POST_TYPES = [
   { id: 'ask', label: 'Pertanyaan', color: 'blue' },
@@ -33,12 +33,13 @@ export default function CreatePost() {
 
     setLoading(true);
     try {
-      // Persiapkan data author dari sesi saat ini (bisa berasal dari Firebase atau localStorage)
       const authorId = user.uid || user.uid;
-      const authorName = user.username || user.email || 'Anonymous';
-      // Panggil helper addPost untuk menyimpan ke Firestore atau localStorage
+      
+      // Ambil data lengkap user dari Firestore untuk mendapatkan username
+      const fullUser = await fetchUserById(authorId);
+      const authorName = fullUser?.username || user.username || user.displayName || user.email?.split('@')[0] || 'Anonymous';
+      
       await addPost({ title, content, type: postType, topic, authorId, authorName });
-      // Setelah sukses, kembalikan ke halaman utama
       navigate('/');
     } catch (err) {
       alert('Gagal membuat post');

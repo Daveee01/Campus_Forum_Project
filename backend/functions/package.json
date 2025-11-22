@@ -1,0 +1,16 @@
+{
+  "name": "campus-forum-backend",
+  "version": "0.1.0",
+  "private": true,
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "start": "node lib/index.js",
+    "deploy": "echo Deploy via Firebase CLI (konfigurasi diperlukan)",
+    "lint": "echo (Tambahkan tooling lint nanti)"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}

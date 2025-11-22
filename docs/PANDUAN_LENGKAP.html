@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panduan Lengkap - Kampus Forum Project</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        .card {
+            background: white;
+            padding: 30px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+        h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            font-size: 1.8em;
+        }
+        h3 {
+            color: #764ba2;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        ul, ol {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #e83e8c;
+        }
+        .highlight-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .success-box {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .info-box {
+            background: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .tech-tag {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            margin: 5px 5px 5px 0;
+            font-size: 0.9em;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            background: #667eea;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Panduan Lengkap</h1>
+            <p class="subtitle">Kampus Forum Project - Social Media Platform</p>
+        </header>
+
+        <!-- APA INI PROJECT -->
+        <div class="card">
+            <h2>🎯 Apa Ini Project?</h2>
+            <p>Project ini adalah <strong>aplikasi forum kampus berbasis web</strong> yang mirip seperti Facebook atau Twitter, tapi khusus untuk lingkungan kampus. Mahasiswa bisa:</p>
+            <ul>
+                <li><strong>Membuat postingan</strong> - Berbagi pikiran, pengumuman, atau pertanyaan</li>
+                <li><strong>Berkomentar</strong> - Menanggapi postingan orang lain</li>
+                <li><strong>Like & Dislike</strong> - Memberi reaksi pada postingan</li>
+                <li><strong>Notifikasi</strong> - Mendapat pemberitahuan saat ada yang berinteraksi</li>
+                <li><strong>Profil pengguna</strong> - Melihat aktivitas dan postingan masing-masing</li>
+                <li><strong>Kunjungi profil lain</strong> - Klik nama author di postingan atau komentar</li>
+                <li><strong>Username publik</strong> - Email tidak lagi ditampilkan, diganti username</li>
+                <li><strong>Pencarian</strong> - Mencari postingan berdasarkan kata kunci</li>
+            </ul>
+            
+            <div class="success-box">
+                <strong>Keunggulan:</strong> Aplikasi ini real-time (langsung update tanpa refresh), responsif (bisa dibuka di HP/tablet/laptop), dan terintegrasi dengan Firebase untuk keamanan dan performa.
+            </div>
+        </div>
+
+        <!-- TEKNOLOGI YANG DIPAKAI -->
+        <div class="card">
+            <h2>💻 Teknologi yang Dipakai</h2>
+            <p>Project ini menggunakan teknologi modern:</p>
+            
+            <h3>Frontend (Tampilan):</h3>
+            <span class="tech-tag">React 18</span>
+            <span class="tech-tag">TypeScript</span>
+            <span class="tech-tag">Vite</span>
+            <span class="tech-tag">Tailwind CSS</span>
+            <span class="tech-tag">React Router</span>
+            
+            <h3>Backend (Server):</h3>
+            <span class="tech-tag">Firebase Auth</span>
+            <span class="tech-tag">Firestore Database</span>
+            <span class="tech-tag">Firebase Hosting</span>
+            
+            <div class="info-box">
+                <strong>Penjelasan Singkat:</strong>
+                <ul style="margin-top: 10px;">
+                    <li><strong>React</strong> - Library JavaScript untuk membuat tampilan yang interaktif</li>
+                    <li><strong>TypeScript</strong> - JavaScript + tipe data (lebih aman, mengurangi bug)</li>
+                    <li><strong>Vite</strong> - Tool untuk menjalankan dan build project (sangat cepat)</li>
+                    <li><strong>Tailwind CSS</strong> - Framework CSS untuk styling yang cepat dan konsisten</li>
+                    <li><strong>Firebase</strong> - Platform backend dari Google (auth, database, hosting)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- CARA SETUP PROJECT -->
+        <div class="card">
+            <h2>🚀 Cara Setup Project</h2>
+            
+            <h3>Langkah 1: Install Software yang Dibutuhkan</h3>
+            <ol>
+                <li><strong>Node.js</strong> (versi 18 atau lebih baru)
+                    <ul>
+                        <li>Download dari: <code>https://nodejs.org</code></li>
+                        <li>Pilih versi LTS (Long Term Support)</li>
+                        <li>Install seperti biasa (Next, Next, Finish)</li>
+                    </ul>
+                </li>
+                <li><strong>Visual Studio Code</strong> (Code Editor)
+                    <ul>
+                        <li>Download dari: <code>https://code.visualstudio.com</code></li>
+                        <li>Install dengan setting default</li>
+                    </ul>
+                </li>
+                <li><strong>Git</strong> (Version Control)
+                    <ul>
+                        <li>Download dari: <code>https://git-scm.com</code></li>
+                        <li>Install dengan setting default</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h3>Langkah 2: Clone Project</h3>
+            <p>Buka terminal/command prompt, lalu jalankan:</p>
+            <code style="display: block; padding: 10px; background: #2d2d2d; color: #f8f8f2; border-radius: 5px; margin: 10px 0;">
+                git clone [URL_REPOSITORY]<br>
+                cd REACT_FIREBASE
+            </code>
+
+            <h3>Langkah 3: Install Dependencies</h3>
+            <p>Masih di terminal, jalankan:</p>
+            <code style="display: block; padding: 10px; background: #2d2d2d; color: #f8f8f2; border-radius: 5px; margin: 10px 0;">
+                npm install
+            </code>
+            <p><em>Proses ini akan download semua library yang dibutuhkan (bisa 5-10 menit tergantung internet)</em></p>
+
+            <h3>Langkah 4: Setup Firebase</h3>
+            <ol>
+                <li>Buka <code>https://console.firebase.google.com</code></li>
+                <li>Login dengan akun Google</li>
+                <li>Buat project baru atau gunakan project yang sudah ada</li>
+                <li>Di Firebase Console, buka <strong>Project Settings</strong> → pilih <strong>Web App</strong></li>
+                <li>Copy konfigurasi Firebase (firebaseConfig)</li>
+                <li>Buat file <code>.env.local</code> di folder project dengan isi:
+                    <code style="display: block; padding: 10px; background: #2d2d2d; color: #f8f8f2; border-radius: 5px; margin: 10px 0;">
+VITE_FIREBASE_API_KEY=your_api_key<br>
+VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain<br>
+VITE_FIREBASE_PROJECT_ID=your_project_id<br>
+VITE_FIREBASE_STORAGE_BUCKET=your_storage_bucket<br>
+VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id<br>
+VITE_FIREBASE_APP_ID=your_app_id
+                    </code>
+                </li>
+            </ol>
+
+            <div class="highlight-box">
+                <strong>PENTING:</strong> File <code>.env.local</code> jangan di-push ke GitHub (sudah ada di .gitignore). Ini berisi rahasia project!
+            </div>
+
+            <h3>Langkah 4b: Deploy Firebase Rules & Indexes (WAJIB!)</h3>
+            <p>Setelah setup Firebase config, deploy security rules dan indexes:</p>
+            <ol>
+                <li>Install Firebase CLI (jika belum):
+                    <code style="display: block; padding: 10px; background: #2d2d2d; color: #f8f8f2; border-radius: 5px; margin: 10px 0;">
+npm install -g firebase-tools
+                    </code>
+                </li>
+                <li>Login ke Firebase:
+                    <code style="display: block; padding: 10px; background: #2d2d2d; color: #f8f8f2; border-radius: 5px; margin: 10px 0;">
+firebase login
+                    </code>
+                </li>
+                <li>Inisialisasi Firebase (pilih Firestore & Hosting):
+                    <code style="display: block; padding: 10px; background: #2d2d2d; color: #f8f8f2; border-radius: 5px; margin: 10px 0;">
+firebase init
+                    </code>
+                </li>
+                <li>Deploy Firestore Rules:
+                    <code style="display: block; padding: 10px; background: #2d2d2d; color: #f8f8f2; border-radius: 5px; margin: 10px 0;">
+firebase deploy --only firestore:rules
+                    </code>
+                </li>
+                <li>Deploy Firestore Indexes:
+                    <code style="display: block; padding: 10px; background: #2d2d2d; color: #f8f8f2; border-radius: 5px; margin: 10px 0;">
+firebase deploy --only firestore:indexes
+                    </code>
+                </li>
+            </ol>
+
+            <div class="info-box">
+                <strong>Apa itu Indexes?</strong> Firestore indexes diperlukan untuk query yang menggunakan multiple <code>where()</code> atau kombinasi <code>where()</code> + <code>orderBy()</code>. Tanpa indexes yang tepat, query akan gagal dengan error "requires an index".
+                <br><br>
+                <strong>File penting:</strong>
+                <ul style="margin-top: 10px;">
+                    <li><code>firestore.rules</code> - Security rules (siapa boleh akses data)</li>
+                    <li><code>firestore.indexes.json</code> - Database indexes (untuk performa query)</li>
+                </ul>
+            </div>
+
+            <h3>Langkah 5: Jalankan Project</h3>
+            <code style="display: block; padding: 10px; background: #2d2d2d; color: #f8f8f2; border-radius: 5px; margin: 10px 0;">
+                npm run dev
+            </code>
+            <p>Buka browser dan akses: <code>http://localhost:5173</code></p>
+            
+            <div class="success-box">
+                <strong>Selamat!</strong> Kalau browser terbuka dan tampilan muncul, berarti setup berhasil! 🎉
+            </div>
+        </div>
+
+        <!-- STRUKTUR FOLDER -->
+        <div class="card">
+            <h2>📁 Struktur Folder Project</h2>
+            
+            <table>
+                <tr>
+                    <th>Folder/File</th>
+                    <th>Fungsi</th>
+                </tr>
+                <tr>
+                    <td><code>src/</code></td>
+                    <td>Folder utama berisi semua source code</td>
+                </tr>
+                <tr>
+                    <td><code>src/components/</code></td>
+                    <td>Komponen UI yang bisa dipakai berulang (Header, Footer, PostList, dll)</td>
+                </tr>
+                <tr>
+                    <td><code>src/pages/</code></td>
+                    <td>Halaman-halaman aplikasi (Home, Login, Profile, dll)</td>
+                </tr>
+                <tr>
+                    <td><code>src/lib/</code></td>
+                    <td>Library/utilitas (koneksi Firebase, helper functions)</td>
+                </tr>
+                <tr>
+                    <td><code>src/styles/</code></td>
+                    <td>File CSS global</td>
+                </tr>
+                <tr>
+                    <td><code>public/</code></td>
+                    <td>File statis (gambar, icon, html)</td>
+                </tr>
+                <tr>
+                    <td><code>docs/</code></td>
+                    <td>Dokumentasi project (termasuk file ini)</td>
+                </tr>
+                <tr>
+                    <td><code>package.json</code></td>
+                    <td>Daftar dependencies dan script</td>
+                </tr>
+                <tr>
+                    <td><code>vite.config.ts</code></td>
+                    <td>Konfigurasi Vite</td>
+                </tr>
+                <tr>
+                    <td><code>tsconfig.json</code></td>
+                    <td>Konfigurasi TypeScript</td>
+                </tr>
+                <tr>
+                    <td><code>tailwind.config.cjs</code></td>
+                    <td>Konfigurasi Tailwind CSS</td>
+                </tr>
+            </table>
+
+            <h3>Komponen Penting:</h3>
+            <ul>
+                <li><strong>Header.tsx</strong> - Navbar (logo, search, notifikasi, menu user)</li>
+                <li><strong>PostList.tsx</strong> - Daftar postingan di homepage</li>
+                <li><strong>Comments.tsx</strong> - Sistem komentar</li>
+                <li><strong>AuthModal.tsx</strong> - Form login/register</li>
+                <li><strong>firebase.ts</strong> - Semua fungsi Firebase (auth, CRUD, notifikasi)</li>
+            </ul>
+        </div>
+
+        <!-- CARA KERJA APLIKASI -->
+        <div class="card">
+            <h2>⚙️ Cara Kerja Aplikasi</h2>
+            
+            <h3>1. Alur Login/Register</h3>
+            <ol>
+                <li>User klik tombol "Login" di header</li>
+                <li>Modal muncul dengan form login/register</li>
+                <li>User isi email + password</li>
+                <li>Firebase Auth memvalidasi kredensial</li>
+                <li>Jika berhasil, user data disimpan di state React</li>
+                <li>User bisa akses fitur yang butuh login</li>
+            </ol>
+
+            <h3>2. Alur Posting</h3>
+            <ol>
+                <li>User klik tombol "Buat Post"</li>
+                <li>Masuk ke halaman CreatePost</li>
+                <li>Isi judul dan konten post</li>
+                <li>Klik "Posting"</li>
+                <li>Data dikirim ke Firestore dengan struktur:
+                    <code style="display: block; padding: 10px; background: #f4f4f4; border-radius: 5px; margin: 10px 0;">
+{<br>
+  &nbsp;&nbsp;id: "auto-generated",<br>
+  &nbsp;&nbsp;authorId: "user-uid",<br>
+  &nbsp;&nbsp;authorName: "nama user",<br>
+  &nbsp;&nbsp;title: "judul post",<br>
+  &nbsp;&nbsp;content: "isi post",<br>
+  &nbsp;&nbsp;createdAt: timestamp,<br>
+  &nbsp;&nbsp;likes: 0,<br>
+  &nbsp;&nbsp;dislikes: 0,<br>
+  &nbsp;&nbsp;commentsCount: 0<br>
+}
+                    </code>
+                </li>
+                <li>Post langsung muncul di homepage (real-time)</li>
+            </ol>
+
+            <h3>3. Alur Like/Dislike</h3>
+            <ol>
+                <li>User klik tombol like/dislike di sebuah post</li>
+                <li>Aplikasi cek: apakah user sudah pernah like/dislike post ini?</li>
+                <li>Firebase Transaction dijalankan untuk:
+                    <ul>
+                        <li>Update counter likes/dislikes di document post</li>
+                        <li>Simpan reaksi user di collection <code>reactions</code></li>
+                    </ul>
+                </li>
+                <li>Sistem notifikasi dijalankan:
+                    <ul>
+                        <li>Buat notifikasi untuk pemilik post</li>
+                        <li>Notifikasi muncul real-time di bell icon</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h3>4. Alur Komentar</h3>
+            <ol>
+                <li>User buka detail post</li>
+                <li>Scroll ke bawah, isi form komentar</li>
+                <li>Klik "Kirim"</li>
+                <li>Komentar disimpan di collection <code>comments</code></li>
+                <li>Counter <code>commentsCount</code> di post di-increment</li>
+                <li>Notifikasi dikirim ke pemilik post</li>
+                <li>Komentar muncul langsung di list</li>
+            </ol>
+
+            <div class="info-box">
+                <strong>Real-time Updates:</strong> Aplikasi menggunakan Firestore listeners (<code>onSnapshot</code>) untuk update data secara real-time tanpa perlu refresh halaman.
+            </div>
+        </div>
+
+        <!-- PENJELASAN CODE DETAIL -->
+        <div class="card">
+            <h2>📝 Penjelasan Code Detail</h2>
+            
+            <h3>File: src/lib/firebase.ts</h3>
+            <p>File ini adalah <strong>jantung aplikasi</strong> yang mengatur semua interaksi dengan Firebase.</p>
+            
+            <h4>1. Inisialisasi Firebase</h4>
+            <code style="display: block; padding: 10px; background: #2d2d2d; color: #f8f8f2; border-radius: 5px; margin: 10px 0; white-space: pre; font-size: 0.85em;">
+import { initializeApp } from 'firebase/app';
+import { getAuth } from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore';
+
+const firebaseConfig = {
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  // ... konfigurasi lainnya dari .env.local
+};
+
+const app = initializeApp(firebaseConfig);
+export const auth = getAuth(app);
+export const db = getFirestore(app);
+            </code>
+            <p><strong>Penjelasan:</strong></p>
+            <ul>
+                <li><code>initializeApp()</code> - Menghubungkan aplikasi ke Firebase project</li>
+                <li><code>getAuth()</code> - Mengaktifkan Firebase Authentication</li>
+                <li><code>getFirestore()</code> - Mengaktifkan Firestore Database</li>
+                <li><code>import.meta.env</code> - Mengambil nilai dari file .env.local (lebih aman)</li>
+            </ul>
+
+            <h4>2. Fungsi Authentication</h4>
+            <code style="display: block; padding: 10px; background: #2d2d2d; color: #f8f8f2; border-radius: 5px; margin: 10px 0; white-space: pre; font-size: 0.85em;">
+// Register user baru
+export async function registerUser(email: string, password: string, displayName: string) {
+  const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+  await updateProfile(userCredential.user, { displayName });
+  
+  // Simpan data user ke Firestore
+  await setDoc(doc(db, 'users', userCredential.user.uid), {
+    uid: userCredential.user.uid,
+    email,
+    displayName,
+    createdAt: serverTimestamp()
+  });
+  
+  return userCredential.user;
+}
+
+// Login user
+export async function loginUser(email: string, password: string) {
+  const userCredential = await signInWithEmailAndPassword(auth, email, password);
+  return userCredential.user;
+}
+
+// Logout user
+export async function logoutUser() {
+  await signOut(auth);
+}
+            </code>
+            <p><strong>Penjelasan:</strong></p>
+            <ul>
+                <li><code>createUserWithEmailAndPassword()</code> - Membuat akun baru di Firebase Auth</li>
+                <li><code>updateProfile()</code> - Menambahkan displayName ke user profile</li>
+                <li><code>setDoc()</code> - Menyimpan data user ke Firestore collection "users"</li>
+                <li><code>serverTimestamp()</code> - Menggunakan waktu server Firebase (lebih akurat)</li>
+                <li><code>signInWithEmailAndPassword()</code> - Login dengan kredensial</li>
+                <li><code>signOut()</code> - Logout dan hapus session</li>
+            </ul>
+
+            <h4>3. Fungsi CRUD Posts</h4>
+            <code style="display: block; padding: 10px; background: #2d2d2d; color: #f8f8f2; border-radius: 5px; margin: 10px 0; white-space: pre; font-size: 0.85em;">
+// Buat post baru
+export async function createPost(title: string, content: string) {
+  const user = auth.currentUser;
+  if (!user) throw new Error('Must be logged in');
+  
+  const postData = {
+    authorId: user.uid,
+    authorName: user.displayName || 'Anonymous',
+    title,
+    content,
+    createdAt: serverTimestamp(),
+    likes: 0,
+    dislikes: 0,
+    commentsCount: 0
+  };
+  
+  const docRef = await addDoc(collection(db, 'posts'), postData);
+  return docRef.id;
+}
+
+// Ambil semua posts (real-time)
+export function subscribePosts(callback: (posts: Post[]) => void) {
+  const q = query(collection(db, 'posts'), orderBy('createdAt', 'desc'));
+  
+  return onSnapshot(q, (snapshot) => {
+    const posts = snapshot.docs.map(doc => ({
+      id: doc.id,
+      ...doc.data()
+    }));
+    callback(posts);
+  });
+}
+            </code>
+            <p><strong>Penjelasan:</strong></p>
+            <ul>
+                <li><code>auth.currentUser</code> - Mengambil user yang sedang login</li>
+                <li><code>addDoc()</code> - Menambahkan document baru ke collection "posts"</li>
+                <li><code>collection()</code> - Mereferensi collection di Firestore</li>
+                <li><code>query()</code> + <code>orderBy()</code> - Membuat query dengan urutan tertentu</li>
+                <li><code>onSnapshot()</code> - Listener real-time yang auto-update saat ada perubahan data</li>
+                <li><code>snapshot.docs.map()</code> - Mengubah snapshot jadi array object JavaScript</li>
+            </ul>
+
+            <h4>4. Fungsi Like/Dislike dengan Transaction</h4>
+            <code style="display: block; padding: 10px; background: #2d2d2d; color: #f8f8f2; border-radius: 5px; margin: 10px 0; white-space: pre; font-size: 0.85em;">
+export async function toggleLike(postId: string) {
+  const user = auth.currentUser;
+  if (!user) throw new Error('Must be logged in');
+  
+  const postRef = doc(db, 'posts', postId);
+  const reactionRef = doc(db, 'reactions', `${user.uid}_${postId}`);
+  
+  await runTransaction(db, async (transaction) => {
+    const postDoc = await transaction.get(postRef);
+    const reactionDoc = await transaction.get(reactionRef);
+    
+    if (!postDoc.exists()) throw new Error('Post not found');
+    
+    const currentReaction = reactionDoc.exists() ? reactionDoc.data().type : null;
+    
+    if (currentReaction === 'like') {
+      // Unlike: hapus reaction, kurangi counter
+      transaction.delete(reactionRef);
+      transaction.update(postRef, { likes: increment(-1) });
+    } else {
+      // Like baru atau ubah dari dislike
+      transaction.set(reactionRef, { userId: user.uid, postId, type: 'like' });
+      
+      if (currentReaction === 'dislike') {
+        transaction.update(postRef, { likes: increment(1), dislikes: increment(-1) });
+      } else {
+        transaction.update(postRef, { likes: increment(1) });
+      }
+      
+      // Kirim notifikasi ke pemilik post
+      if (postDoc.data().authorId !== user.uid) {
+        await createNotification(
+          postDoc.data().authorId,
+          'like',
+          `${user.displayName} menyukai postingan Anda`,
+          postId
+        );
+      }
+    }
+  });
+}
+            </code>
+            <p><strong>Penjelasan:</strong></p>
+            <ul>
+                <li><code>runTransaction()</code> - Memastikan operasi berjalan atomic (semua berhasil atau semua gagal)</li>
+                <li><code>transaction.get()</code> - Membaca data dalam transaction</li>
+                <li><code>increment()</code> - Menambah/mengurangi nilai number secara atomic</li>
+                <li><code>transaction.set()</code> - Menulis data baru</li>
+                <li><code>transaction.update()</code> - Update data yang sudah ada</li>
+                <li><code>transaction.delete()</code> - Hapus document</li>
+                <li>Transaction mencegah race condition saat banyak user like bersamaan</li>
+            </ul>
+
+            <h4>5. Fungsi Notifikasi Real-time</h4>
+            <code style="display: block; padding: 10px; background: #2d2d2d; color: #f8f8f2; border-radius: 5px; margin: 10px 0; white-space: pre; font-size: 0.85em;">
+// Buat notifikasi baru
+export async function createNotification(
+  userId: string,
+  type: 'like' | 'comment',
+  message: string,
+  postId: string
+) {
+  await addDoc(collection(db, 'notifications'), {
+    userId,
+    type,
+    message,
+    postId,
+    isRead: false,
+    createdAt: serverTimestamp()
+  });
+}
+
+// Subscribe notifikasi user (real-time)
+export function subscribeNotifications(userId: string, callback: (notifs: Notification[]) => void) {
+  const q = query(
+    collection(db, 'notifications'),
+    where('userId', '==', userId),
+    orderBy('createdAt', 'desc'),
+    limit(20)
+  );
+  
+  return onSnapshot(q, (snapshot) => {
+    const notifs = snapshot.docs.map(doc => ({
+      id: doc.id,
+      ...doc.data()
+    }));
+    callback(notifs);
+  });
+}
+
+// Tandai notifikasi sudah dibaca
+export async function markNotificationAsRead(notifId: string) {
+  await updateDoc(doc(db, 'notifications', notifId), { isRead: true });
+}
+            </code>
+            <p><strong>Penjelasan:</strong></p>
+            <ul>
+                <li><code>where()</code> - Filter data berdasarkan kondisi tertentu</li>
+                <li><code>limit()</code> - Batasi jumlah data yang diambil (untuk performa)</li>
+                <li><code>updateDoc()</code> - Update field tertentu di document</li>
+                <li>Notifikasi otomatis muncul karena <code>onSnapshot()</code> mendengarkan perubahan</li>
+            </ul>
+
+            <h3>File: src/components/Header.tsx</h3>
+            <p>Komponen navbar yang tampil di semua halaman.</p>
+            
+            <code style="display: block; padding: 10px; background: #2d2d2d; color: #f8f8f2; border-radius: 5px; margin: 10px 0; white-space: pre; font-size: 0.85em;">
+export default function Header({ onSearch, searchQuery = '' }: HeaderProps) {
+  const [user, setUser] = useState&lt;any&gt;(null);
+  const [showAuthModal, setShowAuthModal] = useState(false);
+  const [unreadCount, setUnreadCount] = useState(0);
+  
+  // Listen perubahan auth status
+  useEffect(() => {
+    const unsubscribe = onAuthChange((currentUser) => {
+      setUser(currentUser);
+    });
+    return unsubscribe; // Cleanup saat component unmount
+  }, []);
+  
+  // Subscribe notifikasi jika user login
+  useEffect(() => {
+    if (!user) {
+      setUnreadCount(0);
+      return;
+    }
+    
+    const unsub = subscribeNotifications(user.uid, (notifs) => {
+      const unread = notifs.filter(n => !n.isRead).length;
+      setUnreadCount(unread);
+    });
+    
+    return () => unsub(); // Cleanup listener
+  }, [user]);
+  
+  // Render navbar dengan conditional rendering
+  return (
+    &lt;header&gt;
+      {user ? (
+        // Tampilan untuk user yang sudah login
+        &lt;&gt;
+          &lt;Link to="/create"&gt;Buat Post&lt;/Link&gt;
+          &lt;button&gt;
+            Notifikasi {unreadCount > 0 && &lt;span&gt;{unreadCount}&lt;/span&gt;}
+          &lt;/button&gt;
+        &lt;/&gt;
+      ) : (
+        // Tampilan untuk guest
+        &lt;button onClick={() => setShowAuthModal(true)}&gt;Login&lt;/button&gt;
+      )}
+    &lt;/header&gt;
+  );
+}
+            </code>
+            <p><strong>Penjelasan:</strong></p>
+            <ul>
+                <li><code>useState()</code> - Hook untuk menyimpan state di component</li>
+                <li><code>useEffect()</code> - Hook untuk side effects (API calls, subscriptions, dll)</li>
+                <li><code>return unsubscribe</code> - Cleanup function untuk stop listener saat component unmount</li>
+                <li><code>filter()</code> - Array method untuk filter data</li>
+                <li>Conditional rendering (<code>{user ? ... : ...}</code>) untuk tampilkan UI berbeda</li>
+            </ul>
+
+            <h3>File: src/components/PostList.tsx</h3>
+            <p>Komponen untuk menampilkan daftar post di homepage.</p>
+            
+            <code style="display: block; padding: 10px; background: #2d2d2d; color: #f8f8f2; border-radius: 5px; margin: 10px 0; white-space: pre; font-size: 0.85em;">
+export default function PostList() {
+  const [posts, setPosts] = useState&lt;Post[]&gt;([]);
+  
+  // Subscribe posts real-time
+  useEffect(() => {
+    const unsubscribe = subscribePosts((fetchedPosts) => {
+      setPosts(fetchedPosts);
+    });
+    return unsubscribe;
+  }, []);
+  
+  // Handler untuk like post
+  const handleLike = async (postId: string) => {
+    try {
+      await toggleLike(postId);
+    } catch (error) {
+      console.error('Error liking post:', error);
+    }
+  };
+  
+  return (
+    &lt;div&gt;
+      {posts.map(post => (
+        &lt;div key={post.id}&gt;
+          &lt;h3&gt;{post.title}&lt;/h3&gt;
+          &lt;p&gt;{post.content}&lt;/p&gt;
+          &lt;button onClick={() => handleLike(post.id)}&gt;
+            Like ({post.likes})
+          &lt;/button&gt;
+        &lt;/div&gt;
+      ))}
+    &lt;/div&gt;
+  );
+}
+            </code>
+            <p><strong>Penjelasan:</strong></p>
+            <ul>
+                <li><code>map()</code> - Array method untuk render list items</li>
+                <li><code>key={post.id}</code> - React butuh unique key untuk setiap item di list</li>
+                <li><code>async/await</code> - Menangani operasi asynchronous (API calls)</li>
+                <li><code>try/catch</code> - Error handling untuk tangkap error</li>
+            </ul>
+
+            <h3>File: src/pages/CreatePost.tsx</h3>
+            <p>Halaman untuk membuat post baru.</p>
+            
+            <code style="display: block; padding: 10px; background: #2d2d2d; color: #f8f8f2; border-radius: 5px; margin: 10px 0; white-space: pre; font-size: 0.85em;">
+export default function CreatePost() {
+  const [title, setTitle] = useState('');
+  const [content, setContent] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const navigate = useNavigate();
+  
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault(); // Cegah page reload
+    
+    if (!title.trim() || !content.trim()) {
+      alert('Judul dan konten harus diisi');
+      return;
+    }
+    
+    setIsSubmitting(true);
+    
+    try {
+      await createPost(title, content);
+      navigate('/'); // Redirect ke homepage
+    } catch (error) {
+      console.error('Error creating post:', error);
+      alert('Gagal membuat post');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+  
+  return (
+    &lt;form onSubmit={handleSubmit}&gt;
+      &lt;input
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+        placeholder="Judul post..."
+      /&gt;
+      &lt;textarea
+        value={content}
+        onChange={(e) => setContent(e.target.value)}
+        placeholder="Isi post..."
+      /&gt;
+      &lt;button type="submit" disabled={isSubmitting}&gt;
+        {isSubmitting ? 'Memposting...' : 'Posting'}
+      &lt;/button&gt;
+    &lt;/form&gt;
+  );
+}
+            </code>
+            <p><strong>Penjelasan:</strong></p>
+            <ul>
+                <li><code>e.preventDefault()</code> - Mencegah form reload page (default behavior)</li>
+                <li><code>trim()</code> - Menghapus whitespace di awal/akhir string</li>
+                <li><code>isSubmitting</code> - State untuk disable button saat proses submit (prevent double submit)</li>
+                <li><code>navigate()</code> - Hook dari React Router untuk navigasi programmatic</li>
+                <li><code>finally</code> - Block yang selalu dijalankan, error atau tidak</li>
+            </ul>
+
+            <h3>File: src/App.tsx</h3>
+            <p>Komponen utama yang mengatur routing.</p>
+            
+            <code style="display: block; padding: 10px; background: #2d2d2d; color: #f8f8f2; border-radius: 5px; margin: 10px 0; white-space: pre; font-size: 0.85em;">
+function App() {
+  return (
+    &lt;BrowserRouter&gt;
+      &lt;div className="min-h-screen bg-slate-900"&gt;
+        &lt;Header /&gt;
+        &lt;Routes&gt;
+          &lt;Route path="/" element={&lt;Home /&gt;} /&gt;
+          &lt;Route path="/create" element={&lt;CreatePost /&gt;} /&gt;
+          &lt;Route path="/post/:id" element={&lt;PostDetail /&gt;} /&gt;
+          &lt;Route path="/profile/:userId" element={&lt;Profile /&gt;} /&gt;
+        &lt;/Routes&gt;
+        &lt;Footer /&gt;
+      &lt;/div&gt;
+    &lt;/BrowserRouter&gt;
+  );
+}
+            </code>
+            <p><strong>Penjelasan:</strong></p>
+            <ul>
+                <li><code>&lt;BrowserRouter&gt;</code> - Wrapper untuk enable routing di aplikasi</li>
+                <li><code>&lt;Routes&gt;</code> - Container untuk semua route</li>
+                <li><code>&lt;Route&gt;</code> - Definisi route dengan path dan component</li>
+                <li><code>:id</code> dan <code>:userId</code> - Dynamic parameter di URL</li>
+                <li>Layout dengan Header dan Footer tetap, hanya konten tengah yang berubah</li>
+            </ul>
+
+            <div class="success-box">
+                <strong>Tips Membaca Code:</strong>
+                <ul style="margin-top: 10px;">
+                    <li>Mulai dari <code>App.tsx</code> untuk pahami struktur routing</li>
+                    <li>Lalu baca <code>firebase.ts</code> untuk pahami backend logic</li>
+                    <li>Kemudian baca components satu per satu</li>
+                    <li>Jangan baca semua sekaligus - fokus per fitur</li>
+                    <li>Gunakan console.log() untuk debugging dan pahami alur data</li>
+                </ul>
+            </div>
+            <h3>🔗 Navigasi Profil & Daftar Postingan User</h3>
+            <p>Fitur profil kini mendukung melihat <strong>profil pengguna lain</strong> dan daftar semua postingan yang pernah mereka buat.</p>
+            <ul>
+              <li><strong>Klik nama author di postingan</strong> → menuju <code>/profile/:userId</code></li>
+              <li><strong>Klik nama author di komentar</strong> → menuju profil yang sama</li>
+              <li>Halaman profil menampilkan: avatar, bio, data mahasiswa, statistik, dan <strong>daftar postingan terbaru</strong></li>
+              <li>Teks "Memuat posts..." hanya muncul sebentar saat mengambil data; jika user belum punya postingan akan muncul pesan kosong</li>
+              <li><strong>Username</strong> sekarang digunakan untuk identitas publik (email disembunyikan)</li>
+            </ul>
+            <p><strong>Contoh struktur URL:</strong></p>
+            <code style="display:block;padding:10px;background:#2d2d2d;color:#f8f8f2;border-radius:5px;white-space:pre;font-size:0.85em;">
+      /profile/UID_USER
+      /post/ID_POST
+            </code>
+            <p><strong>Alur Teknis:</strong></p>
+            <ol>
+              <li>User klik nama author → React Router <code>&lt;Link&gt;</code> mengubah URL ke <code>/profile/:userId</code></li>
+              <li>Komponen <code>Profile.tsx</code> membaca <code>userId</code> via <code>useParams()</code></li>
+              <li>Memanggil <code>fetchUserById()</code> untuk data user & <code>fetchPostsByAuthor()</code> untuk daftar postingan</li>
+              <li>Menampilkan loading state (<code>Memuat profil...</code>, <code>Memuat posts...</code>) sampai data siap</li>
+              <li>Jika tidak ada postingan → tampilkan pesan "User ini belum membuat post apapun."</li>
+            </ol>
+            <p><strong>Kode Inti (ringkas):</strong></p>
+            <code style="display:block;padding:10px;background:#2d2d2d;color:#f8f8f2;border-radius:5px;white-space:pre;font-size:0.75em;">
+      // PostList footer (author clickable)
+      &lt;Link to={`/profile/${post.authorId}`} className="font-medium text-blue-400"&gt;
+        {post.authorName}
+      &lt;/Link&gt;
+
+      // Comments author link
+      &lt;Link to={`/profile/${comment.authorId}`} className="font-medium text-blue-400"&gt;
+        {comment.authorName}
+      &lt;/Link&gt;
+
+      // Profile load posts
+      const posts = await fetchPostsByAuthor(result.uid);
+      setUserPosts(posts);
+            </code>
+            <div class="highlight-box">
+              <strong>Catatan:</strong> Jika sebelumnya tampilan "memuat" tidak berhenti, sudah diperbaiki dengan selalu memanggil <code>setLoadingPosts(false)</code> walaupun user belum punya postingan.
+            </div>
+        </div>
+
+        <!-- DATABASE FIRESTORE -->
+        <div class="card">
+            <h2>🗄️ Database Firestore</h2>
+            
+            <h3>Collection: users</h3>
+            <code style="display: block; padding: 10px; background: #f4f4f4; border-radius: 5px; margin: 10px 0;">
+{<br>
+  &nbsp;&nbsp;uid: "unique-user-id",<br>
+  &nbsp;&nbsp;email: "user@email.com",<br>
+  &nbsp;&nbsp;displayName: "Nama User",<br>
+  &nbsp;&nbsp;createdAt: timestamp<br>
+}
+            </code>
+
+            <h3>Collection: posts</h3>
+            <code style="display: block; padding: 10px; background: #f4f4f4; border-radius: 5px; margin: 10px 0;">
+{<br>
+  &nbsp;&nbsp;id: "post-id",<br>
+  &nbsp;&nbsp;authorId: "user-uid",<br>
+  &nbsp;&nbsp;authorName: "Nama Author",<br>
+  &nbsp;&nbsp;title: "Judul Post",<br>
+  &nbsp;&nbsp;content: "Isi post...",<br>
+  &nbsp;&nbsp;createdAt: timestamp,<br>
+  &nbsp;&nbsp;likes: 0,<br>
+  &nbsp;&nbsp;dislikes: 0,<br>
+  &nbsp;&nbsp;commentsCount: 0<br>
+}
+            </code>
+
+            <h3>Collection: comments</h3>
+            <code style="display: block; padding: 10px; background: #f4f4f4; border-radius: 5px; margin: 10px 0;">
+{<br>
+  &nbsp;&nbsp;id: "comment-id",<br>
+  &nbsp;&nbsp;postId: "post-id",<br>
+  &nbsp;&nbsp;authorId: "user-uid",<br>
+  &nbsp;&nbsp;authorName: "Nama Commenter",<br>
+  &nbsp;&nbsp;content: "Isi komentar...",<br>
+  &nbsp;&nbsp;createdAt: timestamp<br>
+}
+            </code>
+
+            <h3>Collection: notifications</h3>
+            <code style="display: block; padding: 10px; background: #f4f4f4; border-radius: 5px; margin: 10px 0;">
+{<br>
+  &nbsp;&nbsp;id: "notif-id",<br>
+  &nbsp;&nbsp;userId: "penerima-notif-uid",<br>
+  &nbsp;&nbsp;type: "like" | "comment",<br>
+  &nbsp;&nbsp;message: "Seseorang menyukai postingan Anda",<br>
+  &nbsp;&nbsp;postId: "post-id",<br>
+  &nbsp;&nbsp;isRead: false,<br>
+  &nbsp;&nbsp;createdAt: timestamp<br>
+}
+            </code>
+
+            <h3>Collection: reactions</h3>
+            <code style="display: block; padding: 10px; background: #f4f4f4; border-radius: 5px; margin: 10px 0;">
+{<br>
+  &nbsp;&nbsp;userId: "user-uid",<br>
+  &nbsp;&nbsp;postId: "post-id",<br>
+  &nbsp;&nbsp;type: "like" | "dislike"<br>
+}
+            </code>
+
+            <div class="highlight-box">
+                <strong>Security Rules:</strong> File <code>firestore.rules</code> mengatur siapa boleh baca/tulis data. Pastikan rules sudah di-deploy ke Firebase!
+            </div>
+        </div>
+
+        <!-- COMMAND YANG SERING DIPAKAI -->
+        <div class="card">
+            <h2>⌨️ Command yang Sering Dipakai</h2>
+            
+            <table>
+                <tr>
+                    <th>Command</th>
+                    <th>Fungsi</th>
+                </tr>
+                <tr>
+                    <td><code>npm run dev</code></td>
+                    <td>Jalankan development server (localhost:5173)</td>
+                </tr>
+                <tr>
+                    <td><code>npm run build</code></td>
+                    <td>Build project untuk production (hasilnya di folder <code>dist/</code>)</td>
+                </tr>
+                <tr>
+                    <td><code>npm run preview</code></td>
+                    <td>Preview hasil build sebelum deploy</td>
+                </tr>
+                <tr>
+                    <td><code>firebase deploy</code></td>
+                    <td>Deploy ke Firebase Hosting</td>
+                </tr>
+                <tr>
+                    <td><code>firebase deploy --only firestore:rules</code></td>
+                    <td>Deploy security rules saja</td>
+                </tr>
+                <tr>
+                    <td><code>git status</code></td>
+                    <td>Lihat perubahan file</td>
+                </tr>
+                <tr>
+                    <td><code>git add .</code></td>
+                    <td>Stage semua perubahan</td>
+                </tr>
+                <tr>
+                    <td><code>git commit -m "pesan"</code></td>
+                    <td>Commit perubahan</td>
+                </tr>
+                <tr>
+                    <td><code>git push</code></td>
+                    <td>Push ke repository</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- TROUBLESHOOTING -->
+        <div class="card">
+            <h2>🔧 Troubleshooting</h2>
+            
+            <h3>Problem: Port 5173 sudah dipakai</h3>
+            <p><strong>Solusi:</strong> Vite otomatis akan cari port lain (5174, 5175, dst). Atau matikan aplikasi yang pakai port 5173.</p>
+
+            <h3>Problem: Firebase error "Permission denied"</h3>
+            <p><strong>Solusi:</strong></p>
+            <ul>
+                <li>Cek apakah Firestore rules sudah di-deploy</li>
+                <li>Pastikan user sudah login</li>
+                <li>Cek console Firebase untuk detail error</li>
+            </ul>
+
+            <h3>Problem: Module not found</h3>
+            <p><strong>Solusi:</strong> Jalankan <code>npm install</code> lagi. Mungkin ada dependency yang belum ter-install.</p>
+
+            <h3>Problem: Build error</h3>
+            <p><strong>Solusi:</strong></p>
+            <ul>
+                <li>Cek error message di terminal</li>
+                <li>Biasanya ada typo atau import yang salah</li>
+                <li>Jalankan <code>npm run dev</code> dulu, error akan lebih jelas</li>
+            </ul>
+
+            <h3>Problem: Notifikasi tidak muncul</h3>
+            <p><strong>Solusi:</strong></p>
+            <ul>
+                <li>Cek apakah fungsi <code>subscribeNotifications</code> dipanggil di <code>Header.tsx</code></li>
+                <li>Cek Firestore, apakah document notifikasi ter-create</li>
+                <li>Cek console browser untuk error JavaScript</li>
+            </ul>
+
+            <h3>Problem: Firebase error "The query requires an index"</h3>
+            <p><strong>Solusi:</strong> Firestore membutuhkan indexes untuk query kompleks (multiple where/orderBy).</p>
+            <ol>
+                <li>Deploy indexes yang sudah dibuat:
+                    <code style="display: block; padding: 10px; background: #2d2d2d; color: #f8f8f2; border-radius: 5px; margin: 10px 0;">
+firebase deploy --only firestore:indexes
+                    </code>
+                </li>
+                <li>Atau klik link di error message untuk auto-create index di console Firebase</li>
+                <li>Tunggu 1-2 menit sampai index selesai dibuat</li>
+                <li>Refresh aplikasi</li>
+            </ol>
+            <p><strong>Penjelasan:</strong> File <code>firestore.indexes.json</code> sudah berisi semua indexes yang dibutuhkan aplikasi ini untuk:</p>
+            <ul>
+                <li>Query posts dengan filter type + sort by createdAt</li>
+                <li>Query comments per post + sort by createdAt</li>
+                <li>Query notifications per user + filter isRead + sort by createdAt</li>
+            </ul>
+
+            <h3>Problem: Profile tidak bisa di-edit</h3>
+            <p><strong>Solusi:</strong></p>
+            <ul>
+                <li>Pastikan user sudah login</li>
+                <li>Cek apakah <code>updateUserProfile()</code> di <code>firebase.ts</code> sudah benar</li>
+                <li>Cek Firestore rules: user hanya boleh edit profile sendiri</li>
+                <li>Lihat browser console untuk error detail</li>
+            </ul>            firebase login
+            firebase deploy --only firestore:rules            firebase login
+            firebase deploy --only firestore:rules
+
+            <div class="highlight-box">
+                <strong>Tips:</strong> Selalu cek browser console (F12) dan terminal untuk error message. 90% masalah bisa dipecahkan dari error message!
+            </div>
+        </div>
+
+        <!-- WORKFLOW TIM -->
+        <div class="card">
+            <h2>👥 Workflow Tim</h2>
+            
+            <h3>Untuk Developer Baru:</h3>
+            <ol>
+                <li>Clone repository</li>
+                <li>Install dependencies (<code>npm install</code>)</li>
+                <li>Minta file <code>.env.local</code> ke ketua tim</li>
+                <li>Jalankan <code>npm run dev</code></li>
+                <li>Baca dokumentasi ini sampai paham</li>
+                <li>Mulai coding! 🚀</li>
+            </ol>
+
+            <h3>Sebelum Mulai Coding:</h3>
+            <ol>
+                <li><code>git pull</code> - Pastikan code kamu up-to-date</li>
+                <li><code>git checkout -b nama-fitur</code> - Buat branch baru</li>
+                <li>Coding di branch kamu</li>
+                <li>Test fitur yang kamu buat</li>
+            </ol>
+
+            <h3>Setelah Selesai Coding:</h3>
+            <ol>
+                <li><code>git add .</code> - Stage perubahan</li>
+                <li><code>git commit -m "feat: nama fitur"</code> - Commit dengan pesan jelas</li>
+                <li><code>git push origin nama-fitur</code> - Push ke GitHub</li>
+                <li>Buat Pull Request di GitHub</li>
+                <li>Minta review dari tim</li>
+                <li>Setelah approved, merge ke main branch</li>
+            </ol>
+
+            <div class="info-box">
+                <strong>Commit Message Convention:</strong>
+                <ul style="margin-top: 10px;">
+                    <li><code>feat:</code> - Fitur baru</li>
+                    <li><code>fix:</code> - Bug fix</li>
+                    <li><code>docs:</code> - Update dokumentasi</li>
+                    <li><code>style:</code> - Perubahan styling</li>
+                    <li><code>refactor:</code> - Refactoring code</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- FITUR MENDATANG -->
+        <div class="card">
+            <h2>🚀 Roadmap Fitur Mendatang</h2>
+            
+            <h3>Priority High:</h3>
+            <ul>
+                <li>✅ Like/Dislike dengan transaction (Done)</li>
+                <li>✅ Sistem notifikasi real-time (Done)</li>
+                <li>✅ Search postingan (Done)</li>
+                <li>⏳ Upload gambar di post</li>
+                <li>✅ Edit & delete post</li>
+                <li>⏳ Pagination untuk list post</li>
+            </ul>
+
+            <h3>Priority Medium:</h3>
+            <ul>
+                <li>⏳ Follow/Unfollow user</li>
+                <li>⏳ Filter post by kategori</li>
+                <li>⏳ Nested comments (reply)</li>
+                <li>⏳ User profile edit</li>
+                <li>⏳ Avatar upload</li>
+            </ul>
+
+            <h3>Priority Low:</h3>
+            <ul>
+                <li>⏳ Dark mode</li>
+                <li>⏳ Hashtag system</li>
+                <li>⏳ Mention user (@username)</li>
+                <li>⏳ Report/block post</li>
+                <li>⏳ Admin panel</li>
+            </ul>
+
+            <div class="success-box">
+                <strong>Cara Kontribusi:</strong> Pilih fitur yang mau dikerjakan, diskusi sama tim, buat branch baru, dan mulai coding!
+            </div>
+        </div>
+
+        <!-- KONTAK & SUMBER BELAJAR -->
+        <div class="card">
+            <h2>📚 Sumber Belajar</h2>
+            
+            <h3>Dokumentasi Resmi:</h3>
+            <ul>
+                <li><strong>React:</strong> <code>https://react.dev</code></li>
+                <li><strong>TypeScript:</strong> <code>https://www.typescriptlang.org/docs</code></li>
+                <li><strong>Firebase:</strong> <code>https://firebase.google.com/docs</code></li>
+                <li><strong>Tailwind CSS:</strong> <code>https://tailwindcss.com/docs</code></li>
+                <li><strong>Vite:</strong> <code>https://vitejs.dev</code></li>
+            </ul>
+
+            <h3>Video Tutorial (Bahasa Indonesia):</h3>
+            <ul>
+                <li>Web Programming UNPAS (YouTube) - React & Firebase</li>
+                <li>Programmer Zaman Now - TypeScript</li>
+                <li>BuildWithAngga - Full Stack Development</li>
+            </ul>
+
+            <h3>Komunitas:</h3>
+            <ul>
+                <li>React Indonesia (Facebook Group)</li>
+                <li>Indonesian Dev (Discord)</li>
+                <li>Stack Overflow (untuk troubleshooting)</li>
+            </ul>
+
+            <div class="info-box">
+                <strong>Tips Belajar:</strong> Jangan langsung baca semua dokumentasi. Belajar sambil praktek - kalau stuck, baru buka dokumentasi atau tanya di komunitas!
+            </div>
+        </div>
+        <footer>
+        </footer>
+    </div>
+</body>
+</html>

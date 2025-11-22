@@ -2,6 +2,7 @@
 // Responsible for fetching posts (optionally filtered by type) and client-side category filtering.
 import { useEffect, useState } from 'react';
 import PostList from '../components/PostList';
+import Header from '../components/Header';
 import { fetchPosts, subscribePosts, PostType } from '../lib/firebase';
 
 const FILTER_TYPES = [
@@ -24,25 +25,55 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
   const [selectedFilter, setSelectedFilter] = useState<'all' | PostType>('all');
   const [selectedCategory, setSelectedCategory] = useState<string>('');
+  const [searchQuery, setSearchQuery] = useState<string>('');
 
   useEffect(() => {
     setLoading(true);
     const unsub = subscribePosts((p: any[]) => {
-      // Apply client-side filters (type and category)
+      // Apply client-side filters (type, category, and search)
       let items = p;
       if (selectedFilter !== 'all') items = items.filter((post: any) => post.type === selectedFilter);
       if (selectedCategory) items = items.filter((post: any) => post.topic === selectedCategory);
+      if (searchQuery.trim()) {
+        const query = searchQuery.toLowerCase();
+        items = items.filter((post: any) => {
+          return (
+            post.title?.toLowerCase().includes(query) ||
+            post.content?.toLowerCase().includes(query) ||
+            post.authorName?.toLowerCase().includes(query) ||
+            post.topic?.toLowerCase().includes(query)
+          );
+        });
+      }
       setPosts(items);
       setLoading(false);
     });
     return () => unsub && unsub();
-  }, [selectedFilter, selectedCategory]);
+  }, [selectedFilter, selectedCategory, searchQuery]);
 
   return (
-    <div className="max-w-7xl mx-auto px-4">
+    <>
+      <Header onSearch={setSearchQuery} searchQuery={searchQuery} />
+      <div className="max-w-7xl mx-auto px-4">
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
         {/* Main Feed */}
         <div className="lg:col-span-3">
+          {/* Search Result Info */}
+          {searchQuery.trim() && (
+            <div className="mb-4 px-4 py-3 bg-blue-600/10 border border-blue-600/30 rounded-lg flex items-center justify-between">
+              <div className="text-sm text-blue-400">
+                <span className="font-medium">Hasil pencarian:</span> "{searchQuery}" 
+                <span className="ml-2 text-gray-400">({posts.length} hasil)</span>
+              </div>
+              <button
+                onClick={() => setSearchQuery('')}
+                className="text-xs px-3 py-1 bg-slate-800 hover:bg-slate-700 text-gray-300 rounded transition-colors"
+              >
+                Hapus
+              </button>
+            </div>
+          )}
+
           {/* Filter Buttons */}
           <div className="flex gap-2 mb-8 overflow-x-auto pb-3 border-b border-slate-800">
             {FILTER_TYPES.map(f => (
@@ -72,7 +103,7 @@ export default function Home() {
             <div className="text-gray-500 text-sm mt-2">Mulai diskusi dengan membuat postingan baru</div>
           </div>
         ) : (
-          <PostList posts={posts} />
+          <PostList posts={posts} onPostDeleted={(deletedId) => setPosts(posts.filter(p => p.id !== deletedId))} />
         )}
         </div>
 
@@ -112,11 +143,12 @@ export default function Home() {
           <div className="bg-slate-900/50 border border-slate-800 rounded-lg p-5">
             <h3 className="text-white font-bold mb-3 text-sm uppercase tracking-wider">Tentang Forum</h3>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Forum diskusi untuk mahasiswa berbagi ilmu, pertanyaan, dan project. Mari kolaborasi dan belajar bersama!
+              Forum diskusi untuk mahasiswa Universitas Klabat untuk berbagi ilmu, pertanyaan, dan project. Mari kolaborasi dan belajar bersama!
             </p>
           </div>
         </div>
       </div>
     </div>
+    </>
   );
 }
